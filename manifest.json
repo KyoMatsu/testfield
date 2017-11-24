@@ -1,0 +1,22 @@
+{
+  "short_name": "PWAblog",
+  "name": "test for icon",
+  "icons": [
+    {
+      "src": "img/manifest/IMGP0182.JPG",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/manifest/IMGP0182.JPG",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "img/manifest/IMGP0182.JPG",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html?launcher=true"
+}
