@@ -1,9 +1,3 @@
-var CACHE_NAME = 'hogehoge-cache-v1';
-var urlsToCache = [
-  '/',
-  '/index.html'
-];
-
 self.addEventListener('install', function(event) {
   // インストール処理
   event.waitUntil(
