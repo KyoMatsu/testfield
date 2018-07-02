@@ -13,7 +13,7 @@ self.addEventListener('fetch', function(event) {
   const ul = new URL(event.request.url);
   console.log(event.request.url);
   
-  if (url.origin == location.origin && url.pathname == 'img/orgimg.jpg') {
+  if (url.origin == location.origin && url.pathname == '/img/orgimg.jpg') {
     event.respondWith(caches.match('/img/cacheimg.jpg'));
   }
 });
