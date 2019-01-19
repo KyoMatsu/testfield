@@ -24,10 +24,10 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', function(event) {
-  const url = new URL(event.request.url);
-  console.log(event.request.url);
-  
-  if (url.origin == location.origin && url.pathname == '/testfield/img/orgimg.jpg') {
-    event.respondWith(caches.match('img/cacheimg.jpg'));
-  }
+  event.respondWith(
+    caches.match(event.request).then(function(res) {
+        if(res) return res;
+        return fetch(event.request);
+    })
+  );
 });
