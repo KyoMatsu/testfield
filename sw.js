@@ -1,9 +1,8 @@
 var CACHE_NAME  = "testfield-cache-v1";
 var urlsToCache = [
-    "/",
-    "/index.html",
-    "/img/orgimg.jpg",
-    "/img/cacheimg.jpg"
+    "index.html",
+    "img/orgimg.jpg",
+    "img/cacheimg.jpg"
 ];
 
 self.addEventListener('install', function(event) {
@@ -21,7 +20,7 @@ self.addEventListener('fetch', function(event) {
   const url = new URL(event.request.url);
   console.log(event.request.url);
   
-  if (url.origin == location.origin && url.pathname == '/img/orgimg.jpg') {
-    event.respondWith(caches.match('/img/cacheimg.jpg'));
+  if (url.origin == location.origin && url.pathname == 'img/orgimg.jpg') {
+    event.respondWith(caches.match('img/cacheimg.jpg'));
   }
 });
