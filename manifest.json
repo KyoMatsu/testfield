@@ -18,6 +18,8 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "index.html?launcher=true",
-  "display": "standalone"
+  "start_url": "https://kyomatsu.github.io/testfield/",
+  "display": "standalone",
+  "background_color": "#43A849",
+  "theme_color": "#7E7785"
 }
