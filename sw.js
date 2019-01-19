@@ -1,7 +1,13 @@
+var CACHE_NAME  = "testfield-cache-v1";
+var urlsToCache = [
+    "https://kyomatsu.github.io/testfield/",
+    "https://kyomatsu.github.io/testfield/index.html"
+];
+
 self.addEventListener('install', function(event) {
   // インストール処理
   event.waitUntil(
-   caches.open('hogehoge-cache-v1').then(cache => cache.add('/img/cacheimg.jpg'))
+   caches.open('hogehoge-cache-v1').then(function(cache) { return cache.addAll(urlsToCache); })
   );
 });
 
