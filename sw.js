@@ -9,7 +9,7 @@ var urlsToCache = [
 self.addEventListener('install', function(event) {
   // インストール処理
   event.waitUntil(
-   caches.open('hogehoge-cache-v1').then(function(cache) { return cache.addAll(urlsToCache); })
+   caches.open('testfield-cache-v1').then(function(cache) { return cache.addAll(urlsToCache); })
   );
 });
 
