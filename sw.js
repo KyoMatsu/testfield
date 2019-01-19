@@ -16,7 +16,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', function(event) {
-  const ul = new URL(event.request.url);
+  const url = new URL(event.request.url);
   console.log(event.request.url);
   
   if (url.origin == location.origin && url.pathname == '/img/orgimg.jpg') {
