@@ -3,21 +3,12 @@
   <meta charset="utf-8">
   <link rel="manifest" href="manifest.json">
   <script>
-      navigator.serviceWorker.register('sw.js').then(function(registration) {
-        // 登録成功
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }).catch(function(err) {
-        // 登録失敗 :(
-        console.log('ServiceWorker registration failed: ', err);
-      });
-    
     setTimeout(() => {
      const img = new Image();
       img.src = 'img/orgimg.jpg';
       document.body.appendChild(img);
     }, 3000);
   </script>
-
 </head>
 <body>
   <div>
@@ -33,6 +24,7 @@
       </div>
     </div>
   </div>
+  <script src="app.js"></script>
 </body>
 
 
