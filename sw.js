@@ -1,7 +1,8 @@
 var CACHE_NAME  = "testfield-cache-v1";
 var urlsToCache = [
     "https://kyomatsu.github.io/testfield/",
-    "https://kyomatsu.github.io/testfield/index.html"
+    "https://kyomatsu.github.io/testfield/index.html",
+    "img/cacheimg.jpg"
 ];
 
 self.addEventListener('install', function(event) {
