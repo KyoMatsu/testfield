@@ -1,4 +1,4 @@
-var CACHE_NAME  = "testfield-cache-v1";
+var CACHE_NAME  = "testfield-cache-v2";
 var urlsToCache = [
     "/testfield/",
     "/testfield/index.html",
