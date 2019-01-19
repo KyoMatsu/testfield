@@ -16,6 +16,11 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('activate', event => {
   console.log('Now ready to handle fetches!');
+  caches.keys().then(function(cache) {
+      cache.map(function(name) {
+        if(CACHE_NAME !== name) caches.delete(name);
+      })
+  })
 });
 
 self.addEventListener('fetch', function(event) {
