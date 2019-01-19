@@ -1,8 +1,10 @@
 var CACHE_NAME  = "testfield-cache-v1";
 var urlsToCache = [
-    "index.html",
-    "img/orgimg.jpg",
-    "img/cacheimg.jpg"
+    "/testfield/",
+    "/testfield/index.html",
+    "/testfield/img/orgimg.jpg",
+    "/testfield/img/cacheimg.jpg",
+    "/testfield/app.js"
 ];
 
 self.addEventListener('install', function(event) {
