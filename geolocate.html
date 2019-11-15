@@ -1,0 +1,67 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+<h1>位置情報取得サンプル</h1>
+  <button onclick="getPosition();">位置情報を取得する</button>
+<script>
+// Geolocation APIに対応している
+    if (navigator.geolocation) {
+	    alert("この端末では位置情報が取得できます");
+    
+	    var arr={
+	    	"秋葉原駅":[35.698383,139.773072],
+	    	"御徒町駅":[35.707142,139.777349],
+	    	"神田駅":[35.698133,139.757528]
+	    };
+	    
+	    
+	    // 現在地取得処理
+	    function getPosition() {
+	      // 現在地を取得
+	      navigator.geolocation.getCurrentPosition(
+	        // 取得成功した場合
+	        function(position) {
+	            var x = position.coords.latitude;
+	            var y = position.coords.longitude;
+	            
+	            var closest=Number.MAX_SAFE_INTEGER;
+	            var location;
+	            for(var k in arr){
+	            	var dist;
+	            	dist=(Math.abs(x - arr[k][0])**2 + Math.abs(y - arr[k][1])**2)**0.5;
+	            	console.log(dist);
+	            	if(dist < closest){
+	            		closest = dist;
+	            		location = k;
+	            	}
+	            }
+	            
+	            alert(location + "が最寄りです。");
+	            
+	        },
+	        // 取得失敗した場合
+	        function(error) {
+	          switch(error.code) {
+	            case 1: //PERMISSION_DENIED
+	              alert("位置情報の利用が許可されていません");
+	              break;
+	            case 2: //POSITION_UNAVAILABLE
+	              alert("現在位置が取得できませんでした");
+	              break;
+	            case 3: //TIMEOUT
+	              alert("タイムアウトになりました");
+	              break;
+	            default:
+	              alert("その他のエラー(エラーコード:"+error.code+")");
+	              break;
+	          }
+	        }
+	      );
+	    }
+    } else {
+      alert("この端末では位置情報が取得できません");
+    }
+</script>
+</body>
